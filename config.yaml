@@ -1,0 +1,22 @@
+# Project Eye phase 1. Thresholds can be changed without editing code.
+
+camera:
+  index: 0
+  width: 640
+  height: 480
+  # Seconds between open attempts when the webcam cannot be read.
+  retry_seconds: 5
+
+ear:
+  # Open eyes are usually about 0.25–0.35. Closed eyes fall below ~0.15.
+  closed_threshold: 0.2
+  # Beep only after EAR stays under the threshold for longer than this.
+  closed_seconds: 2.0
+
+model:
+  path: models/face_landmarker.task
+  url: https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task
+
+alarm:
+  frequency_hz: 880
+  duration_s: 0.4
